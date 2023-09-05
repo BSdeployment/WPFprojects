@@ -1,0 +1,328 @@
+﻿<UserControl x:Class="Sihor.UserControler.MatbeaWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sihor.UserControler"
+                       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="424" d:DesignWidth="698">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="StyleLenghWindow.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="White"/>
+            <GradientStop Color="#FFE4E2E2" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="395*"/>
+            <ColumnDefinition Width="303*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="65" Margin="20,10,0,0" VerticalAlignment="Top" Width="425" StrokeThickness="4">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFECEAEA"/>
+                    <GradientStop Color="#FFECE8E8" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Height="45" Margin="82,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" FontSize="29" RenderTransformOrigin="0.294,0.397" Grid.Column="1"><Run FlowDirection="RightToLeft" Language="he-il" Text="שיעורי מטבעות"/></TextBlock>
+        <Rectangle HorizontalAlignment="Left" Height="334" Margin="68,80,0,0" VerticalAlignment="Top" Width="225" Fill="White" Grid.Column="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="334" Margin="20,80,0,0" VerticalAlignment="Top" Width="425" Fill="White" RadiusX="5" RadiusY="5" Grid.ColumnSpan="2"/>
+
+
+
+
+
+        <TextBox
+            FlowDirection="RightToLeft"
+           x:Name="txtseaarch" 
+            KeyUp="txtseaarch_KeyUp"
+            HorizontalAlignment="Left" Height="34" Margin="124,102,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="הזן ערך לחיפוש" VerticalAlignment="Top" Width="138" BorderBrush="#89698EEA"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="275,112,0,0" TextWrapping="Wrap" Text="חיפוש ערך ברשימה" VerticalAlignment="Top" FontWeight="Bold" FontSize="11"/>
+        <StackPanel  HorizontalAlignment="Left" Height="261" Margin="44,153,0,0" VerticalAlignment="Top" Width="377" Grid.ColumnSpan="2">
+            <ListView Height="250" x:Name="listshior" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Visible" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+
+                        <Border x:Name="border"  BorderThickness="5" CornerRadius="15" RenderTransformOrigin="0.5,0.5" >
+
+
+                            <Border.BorderBrush>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFD5F8D5"/>
+                                    <GradientStop Color="#FFD7EFDC" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.BorderBrush>
+                            <StackPanel
+                            Width="350"
+                            
+                            FlowDirection="RightToLeft"
+                            HorizontalAlignment="Center" Orientation="Horizontal"  Height="33">
+                                <StackPanel.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFD5F8D5"/>
+                                        <GradientStop Color="#FFD7EFDC" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </StackPanel.Background>
+                                <StackPanel
+                                Margin="50 0 0 0"
+                                Orientation="Horizontal"
+                                VerticalAlignment="Center"
+                                >
+
+                                    <TextBlock  
+                                Text="לשיטה זו שיעור" 
+                                    Foreground="#DD060000"
+                                    />
+                                    <!--דינר-->
+                                    <TextBlock                                 
+                                Text="{Binding Titles}"
+                                x:Name="txtdescription"
+                               
+                                    FontWeight="Bold"
+                                   Foreground="Red"
+                                      
+                                /> 
+                                    <!--רווח-->
+
+                          
+
+                            <!--זהב-->
+                                    <TextBlock                                 
+                                Text="{Binding Subtitle}"
+                              
+                                 Margin="5 0 0 0"
+                                    FontWeight="Bold"
+                                   Foreground="Red"
+                                />
+                                    <!--רןןח-->
+                                    <TextBlock
+                                        Text=" "/>
+                                    <TextBlock
+                                        Text="הוא "
+                                        Foreground="Black"
+                                        />
+                                    <!--המספר-->
+                                    <TextBlock
+                                    Text="{Binding result}"
+                                    Foreground="#DD060000"
+                                    x:Name="txtnumbers"
+                                    FontWeight="Bold"
+                                    />
+                                    <!--רווח-->
+                                    
+                                    <materialDesign:PackIcon
+                                        Kind="BookOpenVariant"
+                                        Width="20"
+                                        Height="20"
+                                      
+                                        Margin="5 0 0 0"
+                                        VerticalAlignment="Center"
+                                        Style="{StaticResource icondata}"
+                                        />
+
+
+
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+            </ListView>
+        </StackPanel>
+        <Button 
+            Click="btncalculator_Click"
+            x:Name="btncalculator"  HorizontalAlignment="Left" Height="33" Margin="44,99,0,0" VerticalAlignment="Top" Width="39" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0,0,0,0">
+
+            <materialDesign:PackIcon
+                Style="{StaticResource calculator}"
+                Kind="Calculator"  Height="33" Width="39" HorizontalAlignment="Center"/>
+        </Button>
+
+        <ComboBox x:Name="cmbDerham"  
+                  SelectionChanged="cmbseora_SelectionChanged"
+                  materialDesign:HintAssist.Hint="בחר ערך מהרשימה" FlowDirection="RightToLeft"   HorizontalAlignment="Left" Height="40" Margin="83,272,0,0" VerticalAlignment="Top" Width="195" Background="White" BorderBrush="#892F1F1F" Grid.Column="1">
+
+            <ComboBoxItem  Uid="1"  Width="190" HorizontalAlignment="Center"   Background="White" BorderBrush="White" >
+                <StackPanel  Background="White"  >
+                    <TextBlock Text="שיטה אחת" FontSize="10" Foreground="#FF040000" />
+                    <TextBlock Text="2.8 גרם" FontSize="10" Foreground="Black"/>
+                </StackPanel>
+
+
+            </ComboBoxItem>
+            <ComboBoxItem Uid="2" Width="190" HorizontalAlignment="Center" Background="White" BorderBrush="White" >
+                <StackPanel Background="White"   >
+                    <TextBlock Text="שיטה נוספת" FontSize="10" Foreground="#FF040000" />
+                    <TextBlock Text="2.9 גרם" FontSize="10" Foreground="Black"/>
+                </StackPanel>
+
+
+            </ComboBoxItem>
+            
+            <ComboBoxItem Uid="2" Width="190" HorizontalAlignment="Center" Background="White" BorderBrush="White" >
+                <StackPanel Background="White"   >
+                    <TextBlock Text="שיטה נוספת" FontSize="10" Foreground="#FF040000" />
+                    <TextBlock Text="3 גרם" FontSize="10" Foreground="Black"/>
+                </StackPanel>
+
+
+            </ComboBoxItem> 
+            <ComboBoxItem Uid="2" Width="190" HorizontalAlignment="Center" Background="White" BorderBrush="White" >
+                <StackPanel Background="White"   >
+                    <TextBlock Text="שיטה נוספת" FontSize="10" Foreground="#FF040000" />
+                    <TextBlock Text="3.1 גרם" FontSize="10" Foreground="Black"/>
+                </StackPanel>
+
+
+            </ComboBoxItem>
+            <ComboBoxItem Uid="2" Width="190" HorizontalAlignment="Center" Background="White" BorderBrush="White" >
+                <StackPanel Background="White"   >
+                    <TextBlock Text="שיטה נוספת" FontSize="10" Foreground="#FF040000" />
+                    <TextBlock Text="3.2 גרם" FontSize="10" Foreground="Black"/>
+                </StackPanel>
+
+
+            </ComboBoxItem>
+            <ComboBoxItem Uid="3" Width="190" HorizontalAlignment="Center" Background="White" BorderBrush="White" >
+                <StackPanel Background="White"   >
+                    <TextBox x:Name="txtCustomValue1" KeyUp="txtCustomValue_KeyUp" materialDesign:HintAssist.Hint="הזן כאן ערך אגודל" Foreground="Black" FontSize="12"  />
+                </StackPanel>
+
+
+            </ComboBoxItem>
+
+        </ComboBox>
+        <Path Data="M464.99889,79.495766 L464.5,139.5 577.25,114.79237 577.25,79.495766 z" Fill="#FFF9F22F" HorizontalAlignment="Left" Height="60" Margin="67,80,0,0" Stretch="Fill" VerticalAlignment="Top" Width="226" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Height="17" Margin="124,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" FontWeight="Bold" Grid.Column="1"><Run FlowDirection="RightToLeft" Language="he-il" Text="בחר אפשרות הצגה"/></TextBlock>
+        <RadioButton x:Name="rbtSeora" Checked="rbtSeora_Checked" Content="חישוב לפי משקל השעורה" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="154" Margin="124,169,0,0" Foreground="#FF5093AF" BorderBrush="#FF171819"  Grid.Column="1"  >
+            <RadioButton.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF210FFB" Offset="1"/>
+                </LinearGradientBrush>
+            </RadioButton.Background>
+        </RadioButton>
+        <RadioButton x:Name="rbtDerham" Checked="rbtSeora_Checked"  Content="חישוב לפי מטבע הדרהם" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="169" Margin="130,249,0,0" Foreground="#FF5093AF" BorderBrush="#FF171819" Grid.Column="1"  >
+            <RadioButton.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF210FFB" Offset="1"/>
+                </LinearGradientBrush>
+            </RadioButton.Background>
+        </RadioButton>
+        <Path Data="M465.5,354.04801 L464.5,414.5 577.25,415.00424 577.49858,329.74376 577.50056,329.06596 z" HorizontalAlignment="Left" Height="86" Margin="66,330,0,0" Stretch="Fill" VerticalAlignment="Top" Width="227" Grid.Column="1">
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF6964FF"/>
+                    <GradientStop Color="#FFB4E2FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+        <TextBlock HorizontalAlignment="Left" Height="15" Margin="192,361,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"  Grid.Column="1"><Run FlowDirection="RightToLeft" Language="he-il" Text="עזרה"/></TextBlock>
+        <materialDesign:PackIcon 
+            Style="{StaticResource HelpMatbea}"
+            Kind="HelpNetwork" Height="30" Margin="149,353,0,0" Width="41" Foreground="#FFF7FCFF" Grid.Column="1"/>
+        <!--<TextBlock HorizontalAlignment="Left" Height="22" Margin="157,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" TextAlignment="Center"><Run FlowDirection="RightToLeft" Language="he-il" Text="החישובים מתבצעים לפי הערכים הבאים:"/></TextBlock>-->
+        <StackPanel HorizontalAlignment="Left" Margin="157,23,0,0" Orientation="Horizontal" VerticalAlignment="Top" Background="#FFF2FAFB">
+            <TextBlock Height="23" TextWrapping="Wrap" Width="66"><Run FlowDirection="RightToLeft" Language="he-il" Text="אונקיית זהב"/></TextBlock>
+
+
+
+
+            <TextBlock Margin="20 0" Height="23" TextWrapping="Wrap" Width="66"><Run FlowDirection="RightToLeft" Language="he-il" Text="אונקיית כסף"/></TextBlock>
+            <TextBlock Height="23" TextWrapping="Wrap" Width="66"><Run FlowDirection="RightToLeft" Language="he-il" Text="שער הדולר"/></TextBlock>
+        </StackPanel>
+        <TextBlock x:Name="txtdolar" HorizontalAlignment="Left" Height="20" Margin="327,49,0,0" TextWrapping="Wrap" Text="3.54" VerticalAlignment="Top" Width="63" TextAlignment="Center"/>
+        <TextBlock x:Name="txtsilveron" HorizontalAlignment="Left" Height="20" Margin="240,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" TextAlignment="Center"><Run Text="17 "/><Run FlowDirection="RightToLeft" Language="he-il" Text="דולר"/></TextBlock>
+        <TextBlock x:Name="txtgoldon" HorizontalAlignment="Left" Height="20" Margin="152,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70" TextAlignment="Center"><Run FlowDirection="RightToLeft" Language="he-il" Text="320 דולר"/></TextBlock>
+        <Button 
+            x:Name="btnupdate"
+            Click="btnupdate_Click"
+            HorizontalAlignment="Left"  Margin="75,28,0,0" VerticalAlignment="Top" Width="55" BorderBrush="{x:Null}" Padding="0,0,0,0">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFCBEDFF"/>
+                    <GradientStop Color="#FF3F8DD4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <StackPanel>
+                <materialDesign:PackIcon HorizontalAlignment="Center" Kind="Update" Foreground="#FF4213ED"/>
+                <TextBlock Text="לשינוי" Foreground="White" FontSize="12"/>
+            </StackPanel>
+
+        </Button>
+        <Path Data="M20,10 L19.5,74.5 36.75,74.003846 51.289286,14.465385 51.044755,9.5038462 z" HorizontalAlignment="Left" Height="66" Margin="20,10,0,0" Stretch="Fill" VerticalAlignment="Top" Width="66">
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB8D2EF"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+        <Path Data="M445,10 L409.5,9.5 389.72143,41.75 444.49747,41.501923 z" HorizontalAlignment="Left" Height="66" Margin="390,10,0,0" Stretch="Fill" VerticalAlignment="Top" Width="56" Grid.ColumnSpan="2">
+            <Path.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFAFB7B"/>
+                    <GradientStop Color="#FFFAFB7B" Offset="1"/>
+                </LinearGradientBrush>
+            </Path.Fill>
+        </Path>
+        <materialDesign:PackIcon Kind="HelpNetworkOutline" Height="21" Margin="32,39,0,0" Width="21" Foreground="#FF485AED"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="16" Margin="25,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" FontSize="9" TextAlignment="Center"><Run FlowDirection="RightToLeft" Language="he-il" Text="לעזרה"/></TextBlock>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Height="35" Margin="12,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Grid.Column="1"><Run FlowDirection="RightToLeft" Language="he-il" Text="ערכים לחישוב"/></TextBlock>
+        <materialDesign:PackIcon Kind="Calculator" Height="21" Margin="22,9,0,0" Width="22" Foreground="#FF59ACF9" Grid.Column="1"/>
+        <ComboBox x:Name="cmbseora" 
+                  SelectionChanged="cmbseora_SelectionChanged"
+                  materialDesign:HintAssist.Hint="בחר ערך מהרשימה" FlowDirection="RightToLeft"   HorizontalAlignment="Left" Height="40" Margin="82,195,0,0" VerticalAlignment="Top" Width="195" Background="White" BorderBrush="#892F1F1F" Grid.Column="1">
+
+            <ComboBoxItem  Uid="1"  Width="190" HorizontalAlignment="Center"   Background="White" BorderBrush="White" >
+                <StackPanel  Background="White"  >
+                    <TextBlock Text="השיטה הרווחת" FontSize="10" Foreground="#FF040000" />
+                    <TextBlock Text="0.044 גרם" FontSize="10" Foreground="Black"/>
+                </StackPanel>
+
+
+            </ComboBoxItem>
+            <ComboBoxItem Uid="2" Width="190" HorizontalAlignment="Center" Background="White" BorderBrush="White" >
+                <StackPanel Background="White"   >
+                    <TextBlock Text="שיטה נוספת" FontSize="10" Foreground="#FF040000" />
+                    <TextBlock Text="0.045" FontSize="10" Foreground="Black"/>
+                </StackPanel>
+
+
+            </ComboBoxItem>
+            <ComboBoxItem Uid="3" Width="190" HorizontalAlignment="Center" Background="White" BorderBrush="White" >
+                <StackPanel Background="White"   >
+                    <TextBox
+                        x:Name="txtcustomseora" 
+                        materialDesign:HintAssist.Hint="הזן כאן ערך אחר" Foreground="Black" FontSize="12"  />
+                </StackPanel>
+
+
+            </ComboBoxItem>
+
+        </ComboBox>
+
+
+
+
+    </Grid>
+
+</UserControl>

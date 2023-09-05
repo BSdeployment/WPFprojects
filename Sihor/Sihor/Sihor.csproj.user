@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="UserControler\LenghWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControler\MatbeaWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControler\NefachWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControler\SetachWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\Calcultor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\MainShior.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Windows\UpdateMatbea.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StyleMain - Copy.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="styles\StyleCalculator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="styles\StyleMain.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="styles\StylesMainSihor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControler\LenghWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControler\MatbeaWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControler\NefachWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControler\SetachWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControler\StyleLenghWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\Calcultor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\MainShior.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\StyleCalculator.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\StylesMainSihor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Windows\UpdateMatbea.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,86 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    >
+
+    <Style TargetType="TextBlock" x:Key="txtnavhover">
+        <!--טריגר עבור הובר לתפריטי הנייוט הספר-->
+        <Setter Property="Cursor" Value="Hand"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="#FF587FF7"/>
+
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <Style TargetType="materialDesign:PackIcon" x:Key="bookicon">
+        <!--טריגר עבור הובר לאייקון הספר-->
+        <Setter Property="Cursor" Value="Hand"/>
+
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip   Width="100">
+                    <ToolTip.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFEAE6E6"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ToolTip.Background>
+                    <StackPanel>
+                        <materialDesign:PackIcon HorizontalAlignment="Center" Foreground="Blue" Kind="Help"/>
+                        <TextBlock Margin="0 10 0 0" TextWrapping="Wrap" Text="לחץ כאן לקרוא על יסודות חישוב שיעורי התורה" TextAlignment="Center"/>
+                    </StackPanel>
+                </ToolTip>
+
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="#FF587FF7"/>
+
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Foreground" Value="#BFBABA"/>
+
+            </Trigger>
+
+        </Style.Triggers>
+
+
+
+    </Style>
+
+    <Style TargetType="materialDesign:PackIcon" x:Key="iconback">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="Gray"/>
+            </Trigger> 
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger> 
+        </Style.Triggers>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Width="120" >
+                    <ToolTip.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE0E0E0"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ToolTip.Background>
+                    <StackPanel>
+                        <materialDesign:PackIcon HorizontalAlignment="Center" 
+                                                 Kind="ArrowBack"
+                                                 />
+                        <TextBlock Text="חזור לחלון הקודם"
+                                   TextAlignment="Center"
+                                   />
+                    </StackPanel>
+                </ToolTip>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
